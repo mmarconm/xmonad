@@ -22,7 +22,7 @@ libx11 libxft libxinerama libxrandr libxss \
 pkgconf
 ```
 
-## Archlinux
+## Fedora
 ``` sh
 sudo dnf install \
 git \
