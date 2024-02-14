@@ -2,7 +2,8 @@
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/") t)
-(package-initialize)
+             
+(when (version< emacs-version "27.0") (package-initialize))
 
 ;; Habilita a numeração de linhas globalmente para todas as sessões de edição de texto
 ;; e programação (recomendado para Emacs 26.1 e superior)
