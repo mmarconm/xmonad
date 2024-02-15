@@ -23,6 +23,7 @@ myStartupHook = do
 myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     [ ((modm, xK_Right), nextWS)  -- Move to the next workspace
     , ((modm, xK_Left), prevWS)   -- Move to the previous workspace
+    , ((modm, xK_p), spawn "dmenu_run -fn 'Fira Code Retina:size=11'")
     ]
     ++
     [((modm .|. mask, key), windows $ f i)
@@ -30,11 +31,13 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
         , (f, mask) <- [(W.greedyView, 0), (W.shift, shiftMask)]
     ]
 
-main = xmonad $ ewmh $ docks def {
-    workspaces = myWorkspaces,
-    layoutHook = myLayout,
-    manageHook = myManageHook,
-    startupHook = myStartupHook,
-    terminal = "terminator",
-    keys = \c -> myKeys c `M.union` keys def c
+main = xmonad $ ewmh $ docks def {workspaces = myWorkspaces
+    , modMask = mod4Mask
+    , layoutHook = myLayout
+    , manageHook = myManageHook
+    , startupHook = myStartupHook
+    , terminal = "terminator"
+    , focusedBorderColor = "#6757c9"
+    , normalBorderColor = "#fff"
+    , keys = \c -> myKeys c `M.union` keys def c
 }
