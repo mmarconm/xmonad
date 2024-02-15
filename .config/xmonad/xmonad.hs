@@ -6,9 +6,7 @@ import XMonad.Layout.Spacing
 import XMonad.Hooks.EwmhDesktops
 import XMonad.ManageHook
 
-myLayout = avoidStruts $ spacingRaw True (Border 0 2 2 2) True (Border 5 5 5 5) True $ layoutHook def
-
--- Creating new workspaces
+myLayout = avoidStruts $ spacingRaw True (Border 5 5 5 5) True (Border 5 5 5 5) True $ layoutHook def
 myWorkspaces = ["1:web", "2:code", "3:term", "4:media", "5", "6", "7", "8", "9"]
 
 myManageHook = composeAll
