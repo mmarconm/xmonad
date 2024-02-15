@@ -10,7 +10,7 @@ import qualified Data.Map as M
 import XMonad.Actions.CycleWS (nextWS, prevWS)
 
 myLayout = avoidStruts $ spacingRaw True (Border 5 5 5 5) True (Border 5 5 5 5) True $ layoutHook def
-myWorkspaces = ["1:web", "2:code", "3:term", "4:media", "5", "6", "7", "8", "9"]
+myWorkspaces = ["1:web", "2:code", "3:term", "4:media", "5", "6", "7"]
 
 myManageHook = composeAll
     [ className =? "Thunar" --> doShift "3:term"
