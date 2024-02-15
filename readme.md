@@ -25,6 +25,15 @@ git openssh polybar thunar mc ttf-fira-code ttf-hack dmenu
 sudo pacman -S lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings
 sudo systemctl enable lightdm.service --force
 
+# Extra packages
+sudo pacman -S loupe 
+
+# Configure Wallpaper with Lightdm
+# Lightdm has to have a permission to the folder whare is the images.
+# Save the wallpapers into /usr/share/wallpapers
+# give permission to lightdm
+sudo chown -R root:lightdm /usr/share/wallpapers
+
 # Configure lightdm for xmonad
 sudo tee /usr/share/xsessions/xmonad.desktop <<EOF
 [Desktop Entry]
